@@ -21,9 +21,10 @@ INSTALLED_APPS = [
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
-    'corsheaders',
-    'naashub_app',
+    'authentication',
+    
 ]
+
 
 MIDDLEWARE = [
     'corsheaders.middleware.CorsMiddleware',
