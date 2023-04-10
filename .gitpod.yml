@@ -2,5 +2,5 @@ image:
   file: .gitpod.Dockerfile
 
 tasks:
-  - init: pip install -r requirements.txt
-    command: python manage.py runserver 0.0.0.0:8000
+  - init: echo "Setting up your development environment..."
+    command: echo "Ready to code!"
