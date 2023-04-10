@@ -1,5 +1,6 @@
 from pathlib import Path
 from corsheaders.defaults import default_headers
+import dj_database_url
 
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
 BASE_DIR = Path(__file__).resolve().parent.parent
@@ -56,15 +57,9 @@ TEMPLATES = [
 WSGI_APPLICATION = 'naashub_django.wsgi.application'
 
 DATABASES = {
-    'default': {
-        'ENGINE': 'django.db.backends.postgresql',
-        'NAME': 'naashub',
-        'USER': 'naashub_user',
-        'PASSWORD': 'your_password',
-        'HOST': 'localhost',
-        'PORT': '5432',
-    }
+    'default': dj_database_url.parse('postgres://gcwwfstd:YogS0JfXgn3HHV0apI8buQ93SW4b4HQ2@kandula.db.elephantsql.com/gcwwfstd', conn_max_age=600)
 }
+
 
 AUTH_PASSWORD_VALIDATORS = [
     {
@@ -104,3 +99,4 @@ CORS_ALLOW_HEADERS = list(default_headers) + [
 
 CSRF_COOKIE_NAME = "XSRF-TOKEN"
 CSRF_HEADER_NAME = "X-XSRF-TOKEN"
+
